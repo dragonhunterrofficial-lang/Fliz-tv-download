@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">iptv-org.github.io</domain>
+        <domain includeSubdomains="true">nerroplay.online</domain>
+        <domain includeSubdomains="true">www.highperformanceformat.com</domain>
+        <domain includeSubdomains="true">www.topcreativeformat.com</domain>
+        <domain includeSubdomains="true">www.friendlyduck.com</domain>
+        <domain includeSubdomains="true">pubperform.com</domain>
+        <domain includeSubdomains="true">duepose.com</domain>
+        <domain includeSubdomains="true">kettledroopingcontinuation.com</domain>
+        <domain includeSubdomains="true">workdeadlinededicate.com</domain>
+        <domain includeSubdomains="true">protrafficinspector.com</domain>
+    </domain-config>
+    <debug-overrides>
+        <trust-anchors>
+            <certificates src="system" />
+            <certificates src="user" />
+        </trust-anchors>
+    </debug-overrides>
+</network-security-config>
