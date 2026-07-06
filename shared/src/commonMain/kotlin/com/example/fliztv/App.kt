@@ -154,8 +154,9 @@ fun App(
                 selectedCategory != null -> selectedCategory = null
             }
         }
-        if (selectedChannel != null) {
-            val currentChannel = selectedChannel!!
+        val channel = selectedChannel
+        if (channel != null) {
+            val currentChannel = channel
             val playerState = remember(currentChannel) { PlayerState() }
 
             var isFav by remember { mutableStateOf(FavoritesRepository.isFavorite(currentChannel.id)) }

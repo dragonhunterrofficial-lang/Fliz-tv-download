@@ -218,7 +218,7 @@ private fun SettingsMain(
         Spacer(Modifier.height(if (isTv) 40.dp else 24.dp))
 
         Text(
-            text = "v1.0.0",
+            text = "v2.0.1",
             fontSize = if (isTv) 16.sp else 12.sp,
             color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.4f),
             modifier = Modifier.align(Alignment.CenterHorizontally)
@@ -359,7 +359,7 @@ private fun SettingsContent(onBack: () -> Unit, isTv: Boolean = false) {
                         horizontalArrangement = Arrangement.SpaceBetween
                     ) {
                         Text("Version", fontSize = 14.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                        Text("1.0.0", fontSize = 14.sp, color = MaterialTheme.colorScheme.onSurface)
+                        Text("2.0.1", fontSize = 14.sp, color = MaterialTheme.colorScheme.onSurface)
                     }
                     HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant, thickness = 0.5.dp)
                     Row(

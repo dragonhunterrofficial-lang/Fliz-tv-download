@@ -47,8 +47,10 @@ object ChannelRepository {
 
     private suspend fun fetchFromNetwork(): List<Channel> {
         val repo = PlaylistRepository()
-        val url = PlaylistManager.getActiveChannelsUrl() ?: return emptyList()
-        val rawM3u = repo.fetchRaw(url)
+        val activeSource = PlaylistManager.getActiveSource()
+        val url = activeSource?.url ?: return emptyList()
+        val fallbackUrls = activeSource.fallbackUrls
+        val rawM3u = repo.fetchRaw(url, fallbackUrls)
         val channels = parseM3U(rawM3u)
         mutex.withLock { cachedChannels = channels }
         onCachedChannelsChanged?.invoke(rawM3u)
@@ -69,8 +71,6 @@ object ChannelRepository {
             if (cachedChannels != null && !forceRefresh) {
                 return cachedChannels ?: emptyList()
             }
-        }
-        mutex.withLock {
             if (cachedChannels == null && loadFromCache != null) {
                 val raw = loadFromCache?.invoke() ?: ""
                 if (raw.isNotBlank()) {

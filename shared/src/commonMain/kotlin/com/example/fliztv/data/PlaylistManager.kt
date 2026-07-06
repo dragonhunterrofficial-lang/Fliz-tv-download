@@ -2,7 +2,18 @@ package com.example.fliztv.data
 
 object PlaylistManager {
     private val sources = mutableListOf(
-        PlaylistSource("iptv-org", "iptv-org (Indian)", "https://iptv-org.github.io/iptv/index.m3u", isDefault = true)
+        PlaylistSource(
+            id = "iptv-org",
+            name = "iptv-org (Indian)",
+            url = "https://iptv-org.github.io/iptv/index.m3u",
+            isDefault = true,
+            fallbackUrls = listOf(
+                "https://iptv-org.github.io/iptv/countries/in.m3u",
+                "https://raw.githubusercontent.com/iptv-org/iptv/master/index.m3u",
+                "https://raw.githubusercontent.com/Free-TV/IPTV/master/playlist.m3u8",
+                "https://raw.githubusercontent.com/iptv-org/iptv/master/countries/in.m3u"
+            )
+        )
     )
     private var activeSourceId: String = "iptv-org"
     private var counter = 0L

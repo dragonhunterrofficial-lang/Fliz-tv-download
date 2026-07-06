@@ -1,7 +1,13 @@
 # ---- Compose ----
 -keep class androidx.compose.** { *; }
 
-# ---- Ktor ----
+# ---- Speed up R8: skip optimization pass ----
+-dontoptimize
+
+# ---- Kotlin metadata (R8 compat) ----
+-keep class kotlin.Metadata { *; }
+-keepattributes RuntimeVisibleAnnotations, RuntimeVisibleParameterAnnotations
+-keepattributes *Annotation*, InnerClasses
 -keep class io.ktor.** { *; }
 
 # ---- Media3 (ExoPlayer) ----

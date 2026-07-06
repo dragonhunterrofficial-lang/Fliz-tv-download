@@ -61,7 +61,7 @@ object CastManager {
             routeSelector = MediaRouteSelector.Builder()
                 .addControlCategory(CastMediaControlIntent.categoryForCast(CastMediaControlIntent.DEFAULT_MEDIA_RECEIVER_APPLICATION_ID))
                 .build()
-            contextRef = context
+            contextRef = context.applicationContext
         } catch (_: Exception) {}
     }
 

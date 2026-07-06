@@ -172,7 +172,7 @@ private val COUNTRY_NAMES = mapOf(
 )
 
 private val LANGUAGE_KEYWORD_PAIRS = listOf(
-    "urdu news" to "Urdu", "urdu" to "Urdu",
+    "urdu news" to "Urdu", "urdu" to "Urdu", "dd urdu" to "Urdu",
     "assamese" to "Assamese", "asomiya" to "Assamese",
     "odia" to "Odia", "oriya" to "Odia", "orissa" to "Odia",
     "bhojpuri" to "Bhojpuri",
@@ -218,7 +218,8 @@ private val LANGUAGE_KEYWORD_PAIRS = listOf(
 
     "zee kannada" to "Kannada", "star suvarna" to "Kannada",
     "colors kannada" to "Kannada", "tv9 kannada" to "Kannada",
-    "public tv" to "Kannada", "news18 kannada" to "Kannada",
+    "public tv" to "Kannada", "public movies" to "Kannada", "public music" to "Kannada",
+    "news18 kannada" to "Kannada",
     "kasturi" to "Kannada", "kasthuri" to "Kannada",
     "dd chandana" to "Kannada", "suvarna news" to "Kannada",
     "raj music kannada" to "Kannada",
@@ -277,7 +278,7 @@ private val LANGUAGE_KEYWORD_PAIRS = listOf(
     "nick" to "Hindi", "pogo" to "Hindi", "sonic" to "Hindi",
     "cartoon network" to "Hindi", "disney" to "Hindi", "hungama" to "Hindi",
     "sony yay" to "Hindi",
-    "discovery" to "Hindi", "history tv18" to "Hindi",
+    "discovery" to "Hindi",
     "sports18" to "Hindi", "star sports" to "Hindi",
     "ten sports" to "Hindi", "sony sports" to "Hindi",
     "dd sports" to "Hindi",
@@ -304,7 +305,174 @@ private val LANGUAGE_KEYWORD_PAIRS = listOf(
     "news9" to "English", "news nation english" to "English",
     "hbo" to "English", "star world" to "English",
     "comedy central" to "English", "zee cafe" to "English",
-    "cnbc" to "English", "cnn" to "English", "bbc" to "English"
+    "cnbc tv18" to "English", "cnbc" to "English", "cnn" to "English", "bbc" to "English", "history tv18" to "English",
+
+    // Hindi channels - extended
+    "star utsav movies" to "Hindi", "star utsav" to "Hindi",
+    "colors infinity" to "Hindi", "colors super" to "Hindi",
+    "sony bbc earth" to "Hindi", "zee zest" to "Hindi",
+    "dd kisan" to "Hindi", "dd india" to "Hindi",
+    "sansad tv" to "Hindi",
+    "shemaroo umang" to "Hindi",
+    "manoranjan grand" to "Hindi", "manoranjan prime" to "Hindi",
+    "&flix" to "Hindi", "&prive" to "Hindi", "&xplore" to "Hindi",
+    "times now navbharat" to "Hindi", "tv9 bharatvarsh" to "Hindi",
+    "bharat 24" to "Hindi", "bharat express" to "Hindi",
+    "good news today" to "Hindi", "india news" to "Hindi",
+    "news 24" to "Hindi",
+    "zee business" to "Hindi", "et now swadesh" to "Hindi",
+    "cnbc awaaz" to "Hindi",
+    "investigation discovery" to "Hindi",
+    "sony sports ten" to "Hindi", "star sports select" to "Hindi",
+    "sanskar tv" to "Hindi", "vedic" to "Hindi",
+    "maha movie" to "Hindi", "mastiii" to "Hindi",
+    "shemaroo marathi bana" to "Marathi",
+    "abp ganga" to "Hindi",
+    "all time movies" to "Hindi", "amar ujala" to "Hindi",
+    "bansal news" to "Hindi", "bharat samachar" to "Hindi",
+    "dhamaka movies" to "Hindi",
+    "dhoom music" to "Hindi", "digi shala" to "Hindi",
+    "disha tv" to "Hindi",
+    "fateh tv" to "Hindi", "first india news" to "Hindi",
+    "gangaur tv" to "Hindi", "goldmines" to "Hindi",
+    "hnn 24" to "Hindi", "hindi khabar" to "Hindi",
+    "ibc 24" to "Hindi", "india daily live" to "Hindi",
+    "india voice" to "Hindi", "inh 24" to "Hindi",
+    "ishwar bhakti" to "Hindi", "janta tv" to "Hindi",
+    "jinvani" to "Hindi", "jk 24" to "Hindi",
+    "jus hindi" to "Hindi", "k news india" to "Hindi",
+    "kanshi tv" to "Hindi", "kashish news" to "Hindi",
+    "khabar fast" to "Hindi", "khabrain" to "Hindi",
+    "nazara" to "Hindi", "news 1 india" to "Hindi",
+    "prime news" to "Hindi", "raftaar media" to "Hindi",
+    "raj pariwar" to "Hindi", "rongeen" to "Hindi",
+    "sach bedhadak" to "Hindi", "sadhna plus" to "Hindi",
+    "shraddha" to "Hindi", "sikka news" to "Hindi",
+    "srs music" to "Hindi", "swaraj tv" to "Hindi",
+    "tez tv" to "Hindi", "the faith" to "Hindi",
+    "the q" to "Hindi", "vande gujarat" to "Hindi",
+    "yuva tejas" to "Hindi",
+    "ek din" to "Hindi", "ekdant" to "Hindi",
+    "divya tv" to "Hindi", "news track" to "Hindi",
+    "apex news" to "Hindi", "delhi aaj tak" to "Hindi",
+    "sat sahitya" to "Hindi", "savera india" to "Hindi",
+    "shubh tv" to "Hindi", "sadhna bhakti" to "Hindi",
+    "e vidya" to "Hindi", "haa tv" to "Hindi",
+    "ind 24" to "Hindi",
+    "namo tv" to "Hindi", "shiv shakti" to "Hindi",
+    "svbc" to "Telugu",
+
+    // Tamil channels - extended
+    "colors tamil" to "Tamil", "sun music" to "Tamil",
+    "sun news" to "Tamil", "zee thirai" to "Tamil",
+    "vijay super" to "Tamil", "star vijay music" to "Tamil",
+    "adithya tv" to "Tamil", "aadithya tv" to "Tamil",
+    "news7 tamil" to "Tamil", "puthiya thalaimurai" to "Tamil",
+    "thanthi tv" to "Tamil", "captain news" to "Tamil",
+    "chithiram tv" to "Tamil", "d tamil" to "Tamil",
+    "anjan tv" to "Tamil",
+    "7s music" to "Tamil",
+    "jaya tv" to "Tamil",
+    "jaya max" to "Tamil",
+    "travelxp tamil" to "Tamil", "sri sankara" to "Tamil",
+    "ntv tamil" to "Tamil",
+    "vasanth tv" to "Tamil", "velicham tv" to "Tamil",
+    "aaseervatham" to "Tamil", "aastha tamil" to "Tamil",
+    "angel tv" to "Tamil", "anb news" to "Tamil",
+    "ayush tv" to "Tamil", "ccv" to "Tamil",
+    "channel divya" to "Tamil", "darshana tamil" to "Tamil",
+    "divyavani" to "Tamil", "mercy tv" to "Tamil",
+    "isko tv" to "Tamil", "munoth" to "Tamil",
+    "sidal" to "Tamil", "dmk" to "Tamil",
+    "dharisanam" to "Tamil", "neem" to "Tamil",
+    "thanipodhu" to "Tamil", "tvcm" to "Tamil",
+
+    // Telugu channels - extended
+    "zee cinemalu" to "Telugu", "star maa movies" to "Telugu",
+    "etv cinema" to "Telugu", "star maa music" to "Telugu",
+    "gemini movies" to "Telugu", "gemini music" to "Telugu",
+    "tv5 news" to "Telugu", "prime9 news" to "Telugu",
+    "studio n" to "Telugu", "mojo tv" to "Telugu",
+    "jai telangana" to "Telugu", "i news telugu" to "Telugu",
+    "maa tv" to "Telugu", "ntv telugu" to "Telugu",
+    "10tv" to "Telugu", "10 tv" to "Telugu",
+    "4tv" to "Telugu",
+    "vanitha tv" to "Telugu", "tv1 telugu" to "Telugu",
+    "cvr news" to "Telugu", "cvr health" to "Telugu", "cvr english" to "Telugu",
+    "subhavaartha" to "Telugu",
+    "aastha telugu" to "Telugu", "sri venkateswara" to "Telugu",
+    "99tv" to "Telugu", "suvarna" to "Telugu",
+    "telugu360" to "Telugu", "shakti tv" to "Telugu",
+    "bharat tv" to "Telugu", "sri tv" to "Telugu",
+
+    // Malayalam channels - extended
+    "zee keralam cinema" to "Malayalam", "surya movies" to "Malayalam",
+    "asianet movies" to "Malayalam", "asianet music" to "Malayalam",
+    "kappa tv" to "Malayalam", "reporter tv" to "Malayalam",
+    "indiavision" to "Malayalam",
+    "kairali news" to "Malayalam", "kerala vision" to "Malayalam",
+    "shalom tv" to "Malayalam", "yes india vision" to "Malayalam",
+    "aastha malayalam" to "Malayalam",
+    "24 news" to "Malayalam",
+    "salem tv" to "Malayalam", "jesus" to "Malayalam",
+
+    // Kannada channels - extended
+    "zee picchar" to "Kannada", "star suvarna movies" to "Kannada",
+    "udaya tv" to "Kannada", "udaya movies" to "Kannada",
+    "udaya music" to "Kannada", "udaya news" to "Kannada",
+    "aastha kannada" to "Kannada",
+
+    // Marathi channels - extended
+    "star pravah movies" to "Marathi",
+    "zee talkies" to "Marathi", "mi marathi" to "Marathi",
+    "9x jhakaas" to "Marathi",
+    "sam tv" to "Marathi",
+    "mh one shraddha" to "Marathi",
+    "maiboli" to "Marathi",
+    "jai maharashtra" to "Marathi",
+    "lokshahi news" to "Marathi",
+
+    // Bengali channels - extended
+    "zee bangla cinema" to "Bengali", "jalsha movies" to "Bengali",
+    "republic bangla" to "Bengali", "sangeet bangla" to "Bengali",
+    "channel 10" to "Bengali", "news time" to "Bengali",
+    "kolkata tv" to "Bengali", "aamar bangla" to "Bengali",
+    "24 ghanta" to "Bengali",
+
+    // Gujarati channels - extended
+    "zee gujarati" to "Gujarati",
+    "vtv news" to "Gujarati",
+
+    // Punjabi channels - extended
+    "ptc news" to "Punjabi", "ptc chak de" to "Punjabi",
+    "chardikla" to "Punjabi", "just punjabi" to "Punjabi",
+    "nazara punjab" to "Punjabi", "punjabi zindabad" to "Punjabi",
+    "apna punjab" to "Punjabi",
+
+    // Odia channels - extended
+    "tarang music" to "Odia",
+    "odisha news" to "Odia", "focus odisha" to "Odia",
+    "mbctv" to "Odia",
+
+    // Assamese channels - extended
+    "pratidin" to "Assamese", "northeast live" to "Assamese",
+    "ne news" to "Assamese", "assam talks" to "Assamese",
+
+    // Bhojpuri channels - extended
+    "bhojpuri cinema" to "Bhojpuri",
+
+    // Additional Indian languages
+    "konkani" to "Konkani",
+    "manipuri" to "Meitei", "meitei" to "Meitei", "rang cn" to "Meitei",
+    "nepali" to "Nepali",
+    "haryanvi" to "Haryanvi",
+    "rajasthani" to "Rajasthani",
+    "maithili" to "Maithili",
+    "sindhi" to "Sindhi",
+    "sanskrit" to "Sanskrit", "gyandarshan" to "Sanskrit",
+    "bodo" to "Bodo", "mizo" to "Mizo",
+    "kashmiri" to "Kashmiri", "dogri" to "Dogri",
+    "kokborok" to "Kokborok", "tulu" to "Tulu"
 ).sortedByDescending { it.first.length }
 
 private fun inferLanguage(name: String, tvgLanguage: String, country: String, category: String): String {
@@ -315,7 +483,7 @@ private fun inferLanguage(name: String, tvgLanguage: String, country: String, ca
     if (tvgLangLower.isNotBlank()) {
         val matched = LANGUAGES_BY_TVG[tvgLangLower]
         if (matched != null) return matched
-        if (tvgLangLower in LANGUAGES_BY_TVG.values.map { it.lowercase() }) {
+        if (tvgLangLower in LANGUAGES_BY_TVG_LOWERCASE) {
             return tvgLangLower.replaceFirstChar { it.uppercase() }
         }
     }
@@ -345,8 +513,23 @@ private val LANGUAGES_BY_TVG = mapOf(
     "or" to "Odia", "ori" to "Odia", "odia" to "Odia", "oriya" to "Odia",
     "as" to "Assamese", "asm" to "Assamese", "assamese" to "Assamese",
     "ur" to "Urdu", "urd" to "Urdu", "urdu" to "Urdu",
-    "bh" to "Bhojpuri", "bho" to "Bhojpuri", "bhojpuri" to "Bhojpuri"
+    "bh" to "Bhojpuri", "bho" to "Bhojpuri", "bhojpuri" to "Bhojpuri",
+    "kok" to "Konkani", "gom" to "Konkani", "konkani" to "Konkani",
+    "mni" to "Meitei", "meitei" to "Meitei", "manipuri" to "Meitei",
+    "ne" to "Nepali", "nep" to "Nepali", "nepali" to "Nepali",
+    "bgc" to "Haryanvi", "haryanvi" to "Haryanvi",
+    "rajasthani" to "Rajasthani",
+    "mai" to "Maithili", "maithili" to "Maithili",
+    "sd" to "Sindhi", "snd" to "Sindhi", "sindhi" to "Sindhi",
+    "sa" to "Sanskrit", "san" to "Sanskrit", "sanskrit" to "Sanskrit",
+    "brx" to "Bodo", "bodo" to "Bodo",
+    "lus" to "Mizo", "mizo" to "Mizo",
+    "ks" to "Kashmiri", "kas" to "Kashmiri", "kashmiri" to "Kashmiri",
+    "doi" to "Dogri", "dogri" to "Dogri",
+    "tru" to "Tulu", "tulu" to "Tulu"
 )
+
+private val LANGUAGES_BY_TVG_LOWERCASE = LANGUAGES_BY_TVG.values.mapTo(hashSetOf()) { it.lowercase() }
 
 private fun countryToLanguage(country: String): String {
     return when (country) {

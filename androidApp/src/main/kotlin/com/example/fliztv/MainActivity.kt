@@ -34,6 +34,7 @@ import com.example.fliztv.player.AdaptivePlayerBox
 import com.example.fliztv.player.CastManager
 import com.example.fliztv.player.ChannelLogoImage
 import com.example.fliztv.player.PlayerState
+import com.example.fliztv.player.RecordingDownloader
 
 class MainActivity : ComponentActivity() {
     private var currentChannelName: String = ""
@@ -60,6 +61,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    @Suppress("DEPRECATION")
     private fun hideSystemBars() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             window.decorView.windowInsetsController?.let { controller ->
@@ -248,5 +250,6 @@ class MainActivity : ComponentActivity() {
     override fun onDestroy() {
         super.onDestroy()
         CastManager.release()
+        RecordingDownloader.cleanup()
     }
 }

@@ -221,15 +221,15 @@ fun VlcPlayerBox(
             m.addOption(":no-spdif")
             when (retryLevel) {
                 0 -> {
-                    m.addOption(":network-caching=60000")
-                    m.addOption(":live-caching=60000")
+                    m.addOption(":network-caching=5000")
+                    m.addOption(":live-caching=5000")
                     m.addOption(":avcodec-hw=any")
                     m.addOption(":codec=all,avcodec")
                     m.addOption(":aout=android_audiotrack")
                 }
                 1 -> {
-                    m.addOption(":network-caching=150000")
-                    m.addOption(":live-caching=150000")
+                    m.addOption(":network-caching=15000")
+                    m.addOption(":live-caching=15000")
                     m.addOption(":avcodec-hw=disabled")
                     m.addOption(":codec=avcodec")
                     m.addOption(":aout=android_audiotrack")
@@ -241,8 +241,8 @@ fun VlcPlayerBox(
                     m.addOption(":codec=avcodec")
                 }
                 else -> {
-                    m.addOption(":network-caching=20000")
-                    m.addOption(":live-caching=20000")
+                    m.addOption(":network-caching=60000")
+                    m.addOption(":live-caching=60000")
                     m.addOption(":avcodec-hw=disabled")
                     m.addOption(":codec=avcodec")
                 }

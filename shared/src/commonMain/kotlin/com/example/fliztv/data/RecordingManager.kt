@@ -69,15 +69,17 @@ object RecordingManager {
     }
 
     fun setPersistenceCallbacks(save: (String) -> Unit, load: () -> String) {
-        onChanged = save
-        val raw = load()
-        if (raw.isNotBlank()) {
-            try {
-                val loaded = json.decodeFromString<List<Recording>>(raw)
-                recordings.clear()
-                recordings.addAll(loaded)
-                idCounter = recordings.maxOfOrNull { it.id.substringAfterLast("_").toLongOrNull() ?: 0L } ?: 0L
-            } catch (_: Exception) {}
+        synchronized(this) {
+            onChanged = save
+            val raw = load()
+            if (raw.isNotBlank()) {
+                try {
+                    val loaded = json.decodeFromString<List<Recording>>(raw)
+                    recordings.clear()
+                    recordings.addAll(loaded)
+                    idCounter = recordings.maxOfOrNull { it.id.substringAfterLast("_").toLongOrNull() ?: 0L } ?: 0L
+                } catch (_: Exception) {}
+            }
         }
     }
 

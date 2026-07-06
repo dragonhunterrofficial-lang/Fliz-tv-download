@@ -29,5 +29,6 @@ data class EpgSource(
     val id: String,
     val name: String,
     val url: String,
-    val isDefault: Boolean = false
+    val isDefault: Boolean = false,
+    val fallbackUrls: List<String> = emptyList()
 )

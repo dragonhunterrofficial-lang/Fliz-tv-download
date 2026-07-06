@@ -22,7 +22,7 @@ object LanguagePrefs {
     var selectedLanguages: Set<String> = emptySet()
 }
 
-val MAIN_CATEGORIES = listOf("Entertainment", "Movies", "Music", "News", "Kids", "Devotional", "Geographical", "History", "Sports", "Animal Planet", "Other")
+val MAIN_CATEGORIES = listOf("Entertainment", "Movies", "Music", "News", "Business", "Infotainment", "Kids", "Devotional", "Sports", "Geographical", "History", "Animal Planet", "Other")
 
 data class HomeUiState(
     val indianChannels: List<Channel> = emptyList(),
@@ -48,9 +48,6 @@ class HomeViewModel : ViewModel() {
     init {
         _uiState.value = _uiState.value.copy(selectedLanguages = LanguagePrefs.selectedLanguages)
         loadChannels()
-    }
-
-    companion object {
     }
 
     fun getLanguages(): List<String> = _uiState.value.languages
@@ -142,19 +139,15 @@ class HomeViewModel : ViewModel() {
     fun checkCategoryHealth(category: String) {
         val channels = _uiState.value.channelsByCategory[category] ?: return
         viewModelScope.launch {
-            channels.chunked(5).forEach { batch ->
-                val results = batch.map { chan ->
-                    async {
-                        chan.url to isStreamReachable(chan.url, chan.userAgent, chan.referer)
-                    }
-                }
-                results.forEach { deferred ->
-                    val (url, healthy) = deferred.await()
-                    _uiState.value = _uiState.value.copy(
-                        channelHealth = _uiState.value.channelHealth + (url to healthy)
-                    )
+            val results = channels.map { chan ->
+                async {
+                    chan.url to isStreamReachable(chan.url, chan.userAgent, chan.referer)
                 }
             }
+            val healthMap = results.map { it.await() }
+            _uiState.value = _uiState.value.copy(
+                channelHealth = _uiState.value.channelHealth + healthMap
+            )
         }
     }
 
@@ -193,14 +186,6 @@ class HomeViewModel : ViewModel() {
         _uiState.value = _uiState.value.copy(searchQuery = query)
     }
 
-    fun getFilteredCategories(): List<String> {
-        val state = _uiState.value
-        val query = state.searchQuery
-        val cats = state.categories
-        return if (query.isBlank()) cats
-        else cats.filter { it.contains(query, ignoreCase = true) }
-    }
-
     fun getChannelsForCategory(category: String): List<Channel> {
         if (category == "International") return _uiState.value.englishChannels
         return _uiState.value.channelsByCategory[category] ?: emptyList()
@@ -225,7 +210,9 @@ class HomeViewModel : ViewModel() {
         return when {
             lower.contains("news") -> "News"
             lower.contains("sport") -> "Sports"
-            lower.contains("history") || lower.contains("documentary") -> "History"
+            lower.contains("business") -> "Business"
+            lower.contains("history") -> "History"
+            lower.contains("infotainment") || lower.contains("documentary") -> "Infotainment"
             lower.contains("animal") || lower.contains("wildlife") -> "Animal Planet"
             lower.contains("travel") || lower.contains("geograph") || lower.contains("outdoor") ||
                 lower.contains("science") || lower.contains("nature") || lower.contains("adventure") -> "Geographical"
@@ -244,7 +231,7 @@ class HomeViewModel : ViewModel() {
                 lower.contains("education") || lower.contains("cooking") ||
                 lower.contains("lifestyle") || lower.contains("culture") || lower.contains("general") ||
                 lower.contains("classic") || lower.contains("drama") || lower.contains("series") ||
-                lower.contains("business") || lower.contains("health") -> "Entertainment"
+                lower.contains("health") -> "Entertainment"
             else -> "Other"
         }
     }

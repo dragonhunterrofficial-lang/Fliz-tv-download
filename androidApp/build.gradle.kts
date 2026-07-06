@@ -62,8 +62,8 @@ android {
         applicationId = "com.example.fliztv"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 2
-        versionName = "2.0.0"
+        versionCode = 3
+        versionName = "2.0.1"
         resConfigs("en", "hi")
 
         // Inject secrets into BuildConfig — NOT visible in source code
@@ -98,8 +98,8 @@ android {
         getByName("release") {
             ndk { abiFilters += listOf("arm64-v8a", "armeabi-v7a", "x86_64") }
             signingConfig = signingConfigs.getByName("release")
-            isMinifyEnabled = true
-            isShrinkResources = true
+            isMinifyEnabled = false
+            isShrinkResources = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"

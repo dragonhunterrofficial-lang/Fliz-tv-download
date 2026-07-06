@@ -39,7 +39,6 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.fliztv.data.Channel
-import com.example.fliztv.data.FavoritesRepository
 import com.example.fliztv.screens.components.ChannelCard
 import com.example.fliztv.viewmodel.HomeViewModel
 import kotlinx.coroutines.delay

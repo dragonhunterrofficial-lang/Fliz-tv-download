@@ -27,7 +27,7 @@ data class UpdateInfo(
     val latestVersion: String = "",
     val downloadUrl: String = "",
     val releaseNotes: String = "",
-    val currentVersion: String = "1.0.0"
+    val currentVersion: String = "2.0.1"
 )
 
 object UpdateManager {
@@ -39,7 +39,7 @@ object UpdateManager {
             val response = httpClient.get(GITHUB_API).bodyAsText()
             val release = json.decodeFromString<GitHubRelease>(response)
             val latestTag = release.tag_name.removePrefix("v")
-            val current = "1.0.0"
+            val current = "2.0.1"
 
             val hasUpdate = compareVersions(latestTag, current) > 0
             val apkAsset = release.assets.find { it.name.endsWith(".apk") }
